@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pico.jade.min.css" />
+    <script defer src="3tp.js"></script>
+    <style>
+      x-button {
+        all: inherit;
+      }
+
+      x-form {
+        all: inherit;
+      }
+
+      x-a {
+        text-decoration: underline;
+        color: #00b478;
+      }
+
+      x-a:hover {
+        color: #00cc88;
+      }
+    </style>
+  </head>
+
+  <script>
+    console.log("3TP");
+  </script>
+
+  <body>
+    <main class="container">
+      <x-form method="POST" push-url action="/item" target="content">
+        <fieldset>
+          <label for="form-name">Name</label><br />
+          <input type="text" name="name" id="form-name" required />
+        </fieldset>
+
+        <fieldset>
+          <label for="form-email">Email Address</label><br />
+          <input type="email" name="email" id="form-email" required />
+        </fieldset>
+
+        <fieldset>
+          <label for="form-message">Message</label><br />
+          <textarea name="message" id="form-message" required></textarea>
+        </fieldset>
+
+        <x-button type="submit" name="send">Submit</x-button>
+      </x-form>
+
+      <!-- <form method="POST" action="/item">
+        <fieldset>
+          <label for="form-name">Name</label><br />
+          <input type="text" name="name" id="form-name" required />
+        </fieldset>
+
+        <fieldset>
+          <label for="form-email">Email Address</label><br />
+          <input type="email" name="email" id="form-email" required />
+        </fieldset>
+
+        <fieldset>
+          <label for="form-message">Message</label><br />
+          <textarea name="message" id="form-message" required></textarea>
+        </fieldset>
+
+        <button type="submit" name="send">Submit</button>
+      </form> -->
+
+      <!-- <x-form action="/item" method="PUT" target="content">
+        <label for="comment2">Comment</label>
+        <input type="text" id="comment2" name="comment" required />
+        <x-button type="submit">PUT</x-button>
+      </x-form>
+
+      <form action="/item" method="POST">
+        <label for="comment">Test</label>
+        <input type="text" id="comment" name="comment" required />
+        <button type="submit">Test</button>
+      </form>
+
+      <form action="/item" method="POST">
+        <label for="comment">Comment</label>
+        <input type="text" id="comment" name="comment" />
+        <x-button type="submit">POST</x-button>
+      </form>
+
+      <br />
+
+      <x-button type="submit" action="/item" method="DELETE" target="content">
+        Standalone DELETE button
+      </x-button>
+
+      <br />
+
+      <x-a type="h1" href="/item" method="PATCH" target="content">
+        Patch content with anchor tag
+      </x-a> -->
+
+      <div id="content">CONTENT</div>
+    </main>
+  </body>
+</html>
