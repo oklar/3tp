@@ -43,13 +43,23 @@
     if (el.tagName === "X-BUTTON" || el.tagName === "BUTTON") {
       const form = el.closest("X-FORM");
 
-      if (
-        form &&
-        !Array.from(form.querySelectorAll(":invalid")).some(
-          (el) => !el.reportValidity()
-        )
-      ) {
-        submitForm(form);
+      if (form) {
+        if (
+          !Array.from(form.querySelectorAll(":invalid")).some(
+            (el) => !el.reportValidity()
+          )
+        ) {
+          submitForm(form);
+        }
+      } else {
+        const url = el.getAttribute("action");
+        if (!url) return;
+        sendRequest({
+          method: (el.getAttribute("method") || "GET").toUpperCase(),
+          url,
+          targetElement: document.getElementById(el.getAttribute("target")),
+          pushUrl: el.getAttribute("push-url"),
+        });
       }
 
       return;
