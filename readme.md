@@ -28,7 +28,7 @@ Works like a regular form but supports additional HTTP methods and dynamic conte
 ```html
 <x-form action="/item" method="PUT" target="content">
   <input type="text" name="item" />
-  <button type="submit">Update</button>
+  <x-button type="submit">Update</x-button>
 </x-form>
 ```
 

@@ -21,7 +21,6 @@ describe("3TP Web Components", () => {
   beforeEach(() => {
     container = document.createElement("div");
     document.body.appendChild(container);
-    // Reset fetch mock before each test
     global.fetch.mockReset();
   });
 
