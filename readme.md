@@ -1,3 +1,5 @@
+[![Tests](https://github.com/oklar/3tp/actions/workflows/test.yml/badge.svg)](https://github.com/oklar/3tp/actions/workflows/test.yml)
+
 # 3 Tags Problem
 
 3TP is a lightweight JavaScript library that extends HTML's native `<form>`, `<button>` and `<a>` capabilities by introducing `<x-form>`, `<x-button>` and `<x-a>` as web components. These components allow support for `PUT`, `PATCH`, and `DELETE` methods, enable standalone buttons & anchors to perform AJAX actions, and support content replacement without breaking browser compatibility.
