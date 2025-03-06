@@ -41,7 +41,7 @@
     if (!el || e.type !== "click") return;
 
     if (el.tagName === "X-BUTTON" || el.tagName === "BUTTON") {
-      const form = el.closest("X-FORM");
+      const form = el.closest("x-form");
 
       if (form) {
         if (
