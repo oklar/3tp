@@ -37,11 +37,11 @@
   };
 
   document.addEventListener("click", (e) => {
-    let el = e.target;
-    if (!el || e.type !== "click") return;
+    let elt = e.target;
+    if (!elt || e.type !== "click") return;
 
-    if (el.tagName === "X-BUTTON") {
-      let form = el.closest("x-form");
+    if (elt.tagName === "X-BUTTON") {
+      let form = elt.closest("x-form");
 
       if (form) {
         if (
@@ -55,27 +55,27 @@
         return;
       }
 
-      let url = el.getAttribute("action");
+      let url = elt.getAttribute("action");
       if (!url) return;
 
       sendRequest({
-        method: (el.getAttribute("method") || "GET").toUpperCase(),
+        method: (elt.getAttribute("method") || "GET").toUpperCase(),
         url,
-        targetElement: document.getElementById(el.getAttribute("target")),
-        pushUrl: el.getAttribute("push-url"),
+        targetElement: document.getElementById(elt.getAttribute("target")),
+        pushUrl: elt.getAttribute("push-url"),
       });
 
       return;
     }
 
-    if (el.tagName === "X-A") {
-      let url = el.getAttribute("href") || el.getAttribute("action");
+    if (elt.tagName === "X-A") {
+      let url = elt.getAttribute("href") || elt.getAttribute("action");
       if (!url) return;
       sendRequest({
-        method: (el.getAttribute("method") || "GET").toUpperCase(),
+        method: (elt.getAttribute("method") || "GET").toUpperCase(),
         url,
-        targetElement: document.getElementById(el.getAttribute("target")),
-        pushUrl: el.getAttribute("push-url"),
+        targetElement: document.getElementById(elt.getAttribute("target")),
+        pushUrl: elt.getAttribute("push-url"),
       });
     }
   });
