@@ -51,16 +51,19 @@
         ) {
           submitForm(form);
         }
-      } else {
-        let url = el.getAttribute("action");
-        if (!url) return;
-        sendRequest({
-          method: (el.getAttribute("method") || "GET").toUpperCase(),
-          url,
-          targetElement: document.getElementById(el.getAttribute("target")),
-          pushUrl: el.getAttribute("push-url"),
-        });
+
+        return;
       }
+
+      let url = el.getAttribute("action");
+      if (!url) return;
+
+      sendRequest({
+        method: (el.getAttribute("method") || "GET").toUpperCase(),
+        url,
+        targetElement: document.getElementById(el.getAttribute("target")),
+        pushUrl: el.getAttribute("push-url"),
+      });
 
       return;
     }
