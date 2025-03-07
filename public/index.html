@@ -51,54 +51,28 @@
         <x-button type="submit" name="send">Submit</x-button>
       </x-form>
 
-      <!-- <form method="POST" action="/item">
+      <form method="DELETE" action="/item">
         <fieldset>
           <label for="form-name">Name</label><br />
           <input type="text" name="name" id="form-name" required />
+          <button type="submit">Submit</button>
         </fieldset>
-
-        <fieldset>
-          <label for="form-email">Email Address</label><br />
-          <input type="email" name="email" id="form-email" required />
-        </fieldset>
-
-        <fieldset>
-          <label for="form-message">Message</label><br />
-          <textarea name="message" id="form-message" required></textarea>
-        </fieldset>
-
-        <button type="submit" name="send">Submit</button>
-      </form> -->
-
-      <!-- <x-form action="/item" method="PUT" target="content">
-        <label for="comment2">Comment</label>
-        <input type="text" id="comment2" name="comment" required />
-        <x-button type="submit">PUT</x-button>
-      </x-form>
-
-      <form action="/item" method="POST">
-        <label for="comment">Test</label>
-        <input type="text" id="comment" name="comment" required />
-        <button type="submit">Test</button>
       </form>
-
-      <form action="/item" method="POST">
-        <label for="comment">Comment</label>
-        <input type="text" id="comment" name="comment" />
-        <x-button type="submit">POST</x-button>
-      </form>
-
-      <br />
 
       <x-button type="submit" action="/item" method="DELETE" target="content">
         Standalone DELETE button
       </x-button>
 
-      <br />
-
       <x-a type="h1" href="/item" method="PATCH" target="content">
         Patch content with anchor tag
-      </x-a> -->
+      </x-a>
+
+      <form x-delete="/account">
+        <input type="password" id="password" name="password" required />
+        <button type="submit">
+          Delete Account (leak input password to url)
+        </button>
+      </form>
 
       <div id="content">CONTENT</div>
     </main>

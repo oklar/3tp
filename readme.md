@@ -9,6 +9,7 @@
 - Use `PUT`, `PATCH`, and `DELETE` methods in forms.
 - Allow standalone `<x-button>` elements to send requests without wrapping them in a form.
 - Enable `<x-form>`, `<x-button>` and `<x-a>` to update DOM elements dynamically.
+- History support with `push-url` attribute.
 - No dependencies.
 
 ## Installation
@@ -18,6 +19,25 @@ Simply include the script in your project:
 ```html
 <script src="3tp.js"></script>
 ```
+
+## Benefits
+
+### HTTP Method Handling:
+
+Native HTML forms default to GET when JavaScript is disabled and method is not defined, which is risky if you're using a JS library to issue AJAX requests on submission. In contrast, `<x-form>`, inheriting from a standard HTMLElement, avoids triggering any requests under these conditions. Consider a hypothetical JS library that issues an AJAX request on form submission:
+
+```html
+<form x-delete="/account">
+  <input type="password" id="password" name="password" required />
+  <button type="submit">Delete Account</button>
+</form>
+```
+
+The native form will fall back to GET and expose the password in the URL.
+
+### Future Transition:
+
+Simply search and replace x-elements if these enhanced methods become standard in HTML.
 
 # Usage
 

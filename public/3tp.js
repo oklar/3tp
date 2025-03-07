@@ -6,11 +6,11 @@
       .then((res) => (res.ok ? res.text() : Promise.reject("Network error")))
       .then((html) => targetElement && (targetElement.outerHTML = html))
       .then(() => {
-        if (pushUrl) {
-          let pushedUrl = pushUrl == "" ? url : pushUrl;
-          history.replaceState({ url: location.href }, "", location.href);
-          history.pushState({ url: pushedUrl }, "", pushedUrl);
-        }
+        if (pushUrl === null) return;
+
+        let pushedUrl = pushUrl == "" ? url : pushUrl;
+        history.replaceState({ url: location.href }, "", location.href);
+        history.pushState({ url: pushedUrl }, "", pushedUrl);
       })
       .catch((err) => console.error(err));
 
