@@ -24,7 +24,7 @@ Simply include the script in your project:
 
 ### HTTP Method Handling:
 
-Native HTML forms default to GET when JavaScript is disabled and method is not defined, which is risky if you're using a JS library to issue AJAX requests on submission. In contrast, `<x-form>`, inheriting from a standard HTMLElement, avoids triggering any requests under these conditions. Consider a hypothetical JS library that issues an AJAX request on form submission:
+Native HTML forms default to GET, which can be risky if you're using a JS library to issue AJAX requests on submission. In contrast, `<x-form>`, inheriting from a standard HTMLElement, avoids triggering any requests under these conditions. Consider a hypothetical JS library that issues an AJAX request on form submission:
 
 ```html
 <form x-delete="/account">
